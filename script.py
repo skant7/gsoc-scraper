@@ -24,6 +24,7 @@ for org_link in to_visit:
     print(base_url+org_link)
     soup = BeautifulSoup(response.content, "html.parser")
     for tech_used in (soup.select('li.organization__tag--technology')):
+        print(tech_used)
         if tech_used.text in args.tech:
             result_orgs.add((soup.find('title').text))
 
